@@ -1,0 +1,35 @@
+{
+  "name": "buzz-vsc-theme",
+  "displayName": "buzz-vsc-theme",
+  "version": "0.0.1",
+  "description": "Buzz Lightyear VS Code color theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slegr/buzz-vsc-theme.git"
+  },
+  "author": "slegr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slegr/buzz-vsc-theme/issues"
+  },
+  "homepage": "https://github.com/slegr/buzz-vsc-theme#readme",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "buzz-vsc-theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/buzz-vsc-theme-color-theme.json"
+      }
+    ]
+  }
+}
