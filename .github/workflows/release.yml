@@ -15,19 +15,21 @@ jobs:
           cache: npm
       - run: npm install && mkdir -p ./bin
       - run: npm run package
-      - uses: actions/create-release@v1
-        id: new_release
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
           tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-          draft: true
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
       - uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.new_release.outputs.upload_url }}
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./bin/buzz.vsix
           asset_name: buzz.vsix
           asset_content_type: application/octet-stream
