@@ -1,0 +1,9 @@
+{
+    "files.trimTrailingWhitespace": true,
+    "[yaml]": {
+        "editor.renderWhitespace": "boundary",
+    },
+    "yaml.customTags": [
+        "!alpha sequence"
+    ]
+}

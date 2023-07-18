@@ -5,8 +5,13 @@
   "description": "Buzz Lightyear VS Code color theme",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node ./scripts/build.js",
+    "lint": "node ./scripts/lint.js",
+    "package": "vsce package -o ./bin/buzz.vsix",
+    "vscode:prepublish": "npm run build",
+    "vsce-publish": "vsce publish"
   },
+  "activationEvents": [],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/slegr/buzz-vsc-theme.git"
@@ -18,7 +23,7 @@
   },
   "homepage": "https://github.com/slegr/buzz-vsc-theme#readme",
   "engines": {
-    "vscode": "^1.80.0"
+    "vscode": "^1.74.0"
   },
   "categories": [
     "Themes"
@@ -28,8 +33,14 @@
       {
         "label": "buzz-vsc-theme",
         "uiTheme": "vs-dark",
-        "path": "./themes/buzz-vsc-theme-color-theme.json"
+        "path": "./theme/buzz.json"
       }
     ]
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0",
+    "prettier": "^3.0.0",
+    "tinycolor2": "^1.6.0",
+    "vsce": "^2.15.0"
   }
 }
