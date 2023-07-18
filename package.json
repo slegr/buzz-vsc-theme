@@ -3,7 +3,6 @@
   "displayName": "buzz-vsc-theme",
   "version": "0.0.1",
   "description": "Buzz Lightyear VS Code color theme",
-  "main": "index.js",
   "scripts": {
     "build": "node ./scripts/build.js",
     "lint": "node ./scripts/lint.js",
@@ -11,7 +10,6 @@
     "vscode:prepublish": "npm run build",
     "vsce-publish": "vsce publish"
   },
-  "activationEvents": [],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/slegr/buzz-vsc-theme.git"
